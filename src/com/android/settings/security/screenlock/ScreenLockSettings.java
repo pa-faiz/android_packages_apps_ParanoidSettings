@@ -26,6 +26,7 @@ import androidx.annotation.Nullable;
 
 import co.aospa.settings.security.screenlock.PatternErrorVisiblePreferenceController;
 import co.aospa.settings.security.screenlock.PatternDotsVisiblePreferenceController;
+import co.aospa.settings.security.screenlock.PinScramblePreferenceController;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
@@ -95,6 +96,8 @@ public class ScreenLockSettings extends DashboardFragment
                 context, MY_USER_ID, lockPatternUtils));
         controllers.add(new AutoPinConfirmPreferenceController(
                 context, MY_USER_ID, lockPatternUtils, parent));
+        controllers.add(new PinScramblePreferenceController(
+                context, MY_USER_ID, lockPatternUtils));
         controllers.add(new OwnerInfoPreferenceController(context, parent));
         return controllers;
     }
