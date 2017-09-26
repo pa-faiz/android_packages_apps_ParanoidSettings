@@ -54,6 +54,13 @@
             android:title="@string/always_on_display_schedule_title"
             android:summary="@string/aod_schedule_summary"
             android:fragment="com.android.settings.dashboard.AODSchedule" />
+
+        <co.aospa.framework.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:icon="@drawable/ic_double_tap"
+            android:title="@string/status_bar_double_tap_to_sleep_title"
+            android:summary="@string/status_bar_double_tap_to_sleep_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
 </PreferenceScreen>
