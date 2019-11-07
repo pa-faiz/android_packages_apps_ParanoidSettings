@@ -12,6 +12,7 @@
     <!-- Paranoid Categories -->
     <string name="category_name_sb">Status Bar Control</string>
     <string name="category_name_ls">Lockscreen</string>
+    <string name="category_name_power">Power Menu</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_state_title">Network traffic indicator</string>
@@ -61,5 +62,9 @@
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display realtime charging current, voltage and battery temperature on lockscreen</string>
+
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Advanced restart</string>
+    <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
 
 </resources>
