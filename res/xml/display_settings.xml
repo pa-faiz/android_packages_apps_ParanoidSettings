@@ -99,6 +99,12 @@
             android:summary="@string/icon_manager_summary">
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </Preference>
+
+        <!-- Statusbar Settings -->
+        <Preference
+            android:key="statusbar_settings"
+            android:title="@string/status_bar_title"
+            android:fragment="co.aospa.settings.statusbar.StatusBarSettings" />
     </PreferenceCategory>
 
     <PreferenceCategory
