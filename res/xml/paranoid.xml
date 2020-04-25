@@ -35,5 +35,12 @@
             android:summary="@string/hide_developer_status_summary"
             android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
             settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+
+        <Preference
+            android:key="statusbar_battery"
+            android:icon="@drawable/ic_battery_circle"
+            android:title="@string/battery_percent_title"
+            android:summary="@string/battery_percent_summary"
+            android:fragment="com.android.settings.fuelgauge.StatusBarBatterySettings" />
     </PreferenceCategory>
 </PreferenceScreen>
