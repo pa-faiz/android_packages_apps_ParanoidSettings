@@ -27,15 +27,49 @@ import com.android.settingslib.search.SearchIndexable;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
+
 import org.paranoid.paranoidsettings.fragments.EdgeLightSettings;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class Paranoid extends SettingsPreferenceFragment {
+public class Paranoid extends SettingsPreferenceFragment
+                implements Preference.OnPreferenceChangeListener {
+
+    private static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
+
+    private SwitchPreference mPulseOnTracks;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.paranoid);
+
+        ContentResolver resolver = getContext().getContentResolver();
+
+        mPulseOnTracks = (SwitchPreference) findPreference(PULSE_ON_NEW_TRACKS);
+        boolean pulseonTracks = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT) != 0;
+        mPulseOnTracks.setChecked(pulseonTracks);
+        mPulseOnTracks.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getContext().getContentResolver();
+
+        if (preference == mPulseOnTracks) {
+            boolean val = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_ON_NEW_TRACKS, val ? 1 : 0, UserHandle.USER_CURRENT);
+            boolean pulseonTracks = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT) != 0;
+            return true;
+        }
+        return false;
     }
 
     public static void reset(Context mContext) {
@@ -45,6 +79,8 @@ public class Paranoid extends SettingsPreferenceFragment {
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.QS_BRIGHTNESS_SLIDER_POSITION, 0, UserHandle.USER_CURRENT);
         EdgeLightSettings.reset(mContext);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
