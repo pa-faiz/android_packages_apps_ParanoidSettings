@@ -233,6 +233,12 @@
             android:summary="@string/qs_show_data_usage_summary"
             android:defaultValue="true" />
 
+        <SwitchPreferenceCompat
+            android:key="pulse_on_new_tracks"
+            android:icon="@drawable/ic_music"
+            android:title="@string/pulse_on_new_tracks_title"
+            android:summary="@string/pulse_on_new_tracks_summary" />
+
         <co.aospa.framework.preference.SystemSettingSeekBarPreference
             android:key="qs_transparency"
             android:title="@string/qs_transparency_title"
