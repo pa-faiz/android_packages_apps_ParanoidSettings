@@ -44,6 +44,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="category_name_monet"
+        android:title="@string/category_name_monet">
+
+        <Preference
+            android:key="monet_engine"
+            android:title="@string/monet_engine_title"
+            android:summary="@string/monet_engine_summary"
+            android:fragment="org.paranoid.paranoidsettings.fragments.MonetEngine" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="volume_panel_category"
         android:title="@string/volume_panel_title">
 
