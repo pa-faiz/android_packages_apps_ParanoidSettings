@@ -20,6 +20,23 @@
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
 
+        <co.aospa.framework.preference.SecureSettingListPreference
+            android:key="qs_show_brightness_slider"
+            android:icon="@drawable/ic_brightness"
+            android:title="@string/status_bar_brightness_slider_title"
+            android:entries="@array/status_bar_brightness_slider_entries"
+            android:entryValues="@array/status_bar_brightness_slider_values"
+            android:defaultValue="1" />
+
+        <co.aospa.framework.preference.SecureSettingListPreference
+            android:key="qs_brightness_slider_position"
+            android:icon="@drawable/ic_brightness"
+            android:title="@string/status_bar_brightness_slider_position_title"
+            android:entries="@array/status_bar_brightness_slider_position_entries"
+            android:entryValues="@array/status_bar_brightness_slider_position_values"
+            android:dependency="qs_show_brightness_slider"
+            android:defaultValue="0" />
+
         <Preference
             android:key="network_traffic_state"
             android:icon="@drawable/ic_settings_network_traffic"
