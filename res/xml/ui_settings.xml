@@ -63,8 +63,21 @@
             android:icon="@drawable/ic_font"
             android:title="@string/theme_customization_font_title"
             android:summary="@string/theme_customization_font_summary"
-            android:fragment="com.crdroid.settings.fragments.ui.FontsPicker"/>
+            android:fragment="org.paranoid.paranoidsettings.fragments.FontsPicker"/>
 
+        <Preference
+            android:key="android.theme.customization.signal_icon"
+            android:icon="@drawable/ic_signal"
+            android:title="@string/theme_customization_signal_icon_title"
+            android:summary="@string/theme_customization_signal_icon_summary"
+            android:fragment="org.paranoid.paranoidsettings.fragments.SignalIcons"/>
+
+        <Preference
+            android:key="android.theme.customization.wifi_icon"
+            android:icon="@drawable/ic_wifi"
+            android:title="@string/theme_customization_wifi_icon_title"
+            android:summary="@string/theme_customization_wifi_icon_summary"
+            android:fragment="org.paranoid.paranoidsettings.fragments.WifiIcons"/>
     </PreferenceCategory>
 
     <PreferenceCategory
