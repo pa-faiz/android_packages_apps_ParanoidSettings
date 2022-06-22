@@ -135,4 +135,9 @@
     <string name="gestures_one_finger_swipe_left">One-finger swipe left</string>
     <string name="gestures_two_finger_swipe">Two-finger swipe</string>
 
+    <!-- Preference and settings suggestion title text for screen off UDFPS [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title">Always on Fingerprint</string>
+    <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
+    <string name="ambient_display_screen_off_udfps_summary">Allows unlocking with the screen off.\nEnabling may cause accidental wake-ups.</string>
+
 </resources>
