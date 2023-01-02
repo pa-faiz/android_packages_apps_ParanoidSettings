@@ -26,6 +26,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.internal.logging.nano.MetricsProto;
 import android.os.UserHandle;
 import android.provider.Settings;
 
@@ -116,7 +117,7 @@ public class Paranoid extends DashboardFragment
 
     @Override
     public int getMetricsCategory() {
-        return 0;
+        return MetricsProto.MetricsEvent.PA;
     }
 
     /**

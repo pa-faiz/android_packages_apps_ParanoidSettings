@@ -219,4 +219,8 @@
     <string name="monet_engine_tint_background_title">Tint background</string>
     <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
 
+    <!-- Clock Fonts -->
+    <string name="theme_customization_lock_clock_title">Clock font style</string>
+    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+
 </resources>
