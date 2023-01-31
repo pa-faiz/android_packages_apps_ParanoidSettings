@@ -274,4 +274,9 @@
 
     <!-- Text shown for the title of the restart systemui option -->
     <string name="power_menu_restart_systemui_title">Restart SystemUI</string>
+
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">Background opacity</string>
+    <string name="qs_transparency_summary">Set opacity level for QS background</string>
+
 </resources>
