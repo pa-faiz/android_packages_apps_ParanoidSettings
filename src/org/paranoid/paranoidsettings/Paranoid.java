@@ -27,6 +27,8 @@ import com.android.settingslib.search.SearchIndexable;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import org.paranoid.paranoidsettings.fragments.EdgeLightSettings;
+
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class Paranoid extends SettingsPreferenceFragment {
 
@@ -42,6 +44,7 @@ public class Paranoid extends SettingsPreferenceFragment {
                 Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.QS_BRIGHTNESS_SLIDER_POSITION, 0, UserHandle.USER_CURRENT);
+        EdgeLightSettings.reset(mContext);
     }
 
     @Override

@@ -64,6 +64,14 @@
             android:summary="@string/aod_schedule_summary"
             android:fragment="com.android.settings.dashboard.AODSchedule" />
 
+        <!-- Edge Light Settings -->
+        <Preference
+            android:key="edge_light_settings"
+            android:icon="@drawable/ic_pulse"
+            android:title="@string/edge_light_title"
+            android:summary="@string/edge_light_summary"
+            android:fragment="org.paranoid.paranoidsettings.fragments.EdgeLightSettings" />
+
         <co.aospa.framework.preference.SystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
             android:icon="@drawable/ic_double_tap"
