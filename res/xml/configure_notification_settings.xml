@@ -196,5 +196,12 @@
             android:summary="@string/notification_assistant_summary"
             settings:controller="com.android.settings.notification.NotificationAssistantPreferenceController"/>
 
+        <Preference
+            android:key="edge_light_settings"
+            android:icon="@drawable/ic_pulse"
+            android:title="@string/edge_light_title"
+            android:summary="@string/edge_light_summary"
+            android:fragment="co.aospa.settings.edgelight.EdgeLightSettings" />
+
     </PreferenceCategory>
 </PreferenceScreen>
