@@ -17,6 +17,7 @@
     <string name="category_name_qs">QS panel</string>
     <string name="category_name_ui">UI</string>
     <string name="category_name_dev">Dev Status</string>
+    <string name="navbar_category">Navbar Settings</string>
     <string name="spoofing_category_title">Google Spoofing</string>
     <string name="spoofing_footer_summary">Apps may needs to be closed once after enabling spoofing.</string>
 
@@ -139,5 +140,9 @@
     <string name="power_menu_type_classic">Classic (A8)</string>
     <string name="power_menu_type_grid">Grid</string>
     <string name="power_menu_type_legacy">Legacy (A7)</string>
+
+    <!-- Navbar -->
+    <string name="navbar_tuner_title">Navbar tuner</string>
+    <string name="navbar_tuner_summary">Customize your navbar layout</string>
 
 </resources>
