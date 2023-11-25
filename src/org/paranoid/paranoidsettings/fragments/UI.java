@@ -28,6 +28,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import org.paranoid.paranoidsettings.fragments.IslandSettings;
+
 
 public class UI extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
@@ -40,6 +42,7 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.CUSTOM_VOLUME_STYLES, 2, UserHandle.USER_CURRENT);
+        IslandSettings.reset(mContext);
     }
 
     @Override
