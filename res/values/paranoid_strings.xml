@@ -13,6 +13,7 @@
     <string name="category_name_sb">Status Bar Control</string>
     <string name="category_name_ls">Lockscreen</string>
     <string name="category_name_power">Power Menu</string>
+    <string name="category_name_spoof">Google spoofing</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_state_title">Network traffic indicator</string>
@@ -66,5 +67,13 @@
     <!-- Global Actions -->
     <string name="global_actions_advanced_reboot_title">Advanced restart</string>
     <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
+
+    <!-- Play Integrity -->
+    <string name="something_play_integrity_dashboard_title">Play Integrity</string>
+    <string name="play_integrity_summary">Adjust Play Integrity settings</string>
+    <string name="play_integrity_update_title">Update Play Integrity Patch</string>
+    <string name="play_integrity_update_summary">Download and apply latest fingerprint to spoof</string>
+    <string name="play_update_title">Update</string>
+    <string name="play_fingerprint">Spoofed values</string>
 
 </resources>
