@@ -109,4 +109,15 @@
             android:icon="@drawable/ic_spoofing" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="category_name_ui"
+        android:title="@string/category_name_ui">
+
+        <Preference
+            android:key="ui_category"
+            android:title="@string/something_ui_dashboard_title"
+            android:fragment="org.paranoid.paranoidsettings.fragments.UI"
+            android:icon="@drawable/ic_ui" />
+        </PreferenceCategory>
+
 </PreferenceScreen>

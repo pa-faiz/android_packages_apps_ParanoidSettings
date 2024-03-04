@@ -15,6 +15,7 @@
     <string name="category_name_power">Power Menu</string>
     <string name="category_name_spoof">Google spoofing</string>
     <string name="category_name_qs">QS panel</string>
+    <string name="category_name_ui">UI</string>
     <string name="spoofing_category_title">Google Spoofing</string>
     <string name="spoofing_footer_summary">Apps may needs to be closed once after enabling spoofing.</string>
 
@@ -87,5 +88,8 @@
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Show data usage</string>
     <string name="qs_show_data_usage_summary">Show daily cellular/Wi-Fi data usage in QS footer</string>
+
+    <!-- UI -->
+    <string name="something_ui_dashboard_title">Interface</string>
 
 </resources>
