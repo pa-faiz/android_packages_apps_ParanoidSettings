@@ -63,7 +63,7 @@
             android:icon="@drawable/ic_font"
             android:title="@string/theme_customization_font_title"
             android:summary="@string/theme_customization_font_summary"
-            android:fragment="org.paranoid.paranoidsettings.fragments.FontsPicker"/>
+            android:fragment="org.paranoid.paranoidsettings.fragments.FontPickerPreview"/>
 
         <Preference
             android:key="android.theme.customization.signal_icon"
