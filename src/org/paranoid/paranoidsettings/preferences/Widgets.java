@@ -7,6 +7,7 @@ import android.content.res.ColorStateList;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -39,6 +40,8 @@ public class Widgets extends RelativeLayout {
     private View[] mainWidgetViews;
     private View[] widgetViews;
     private int mDarkColor, mDarkColorActive, mLightColor, mLightColorActive;
+    
+    private boolean mIsInflated = false;
 
     public Widgets(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -69,15 +72,43 @@ public class Widgets extends RelativeLayout {
             }
         }
         new MyContentObserver(new Handler()).observe();
+        mIsInflated = true;
         updateWidgetViews();
     }
 
     private void updateWidgetViews() {
+        if (!mIsInflated) return;
+        int lockscreenWidgetsEnabled = Settings.System.getIntForUser(
+                mContext.getContentResolver(),
+                "lockscreen_widgets_enabled",
+                0,
+                UserHandle.USER_CURRENT);
+        if (lockscreenWidgetsEnabled == 0) {
+            hideAllWidgets();
+            return;
+        }
         if (mainWidgetViews != null) {
             updateMainWidgetViews(mainWidgetViews, "lockscreen_widgets");
         }
         if (widgetViews != null) {
             updateSecondaryWidgetViews(widgetViews, "lockscreen_widgets_extras");
+        }
+    }
+
+    private void hideAllWidgets() {
+        if (mainWidgetViews != null) {
+            for (View view : mainWidgetViews) {
+                if (view != null) {
+                    view.setVisibility(View.GONE);
+                }
+            }
+        }
+        if (widgetViews != null) {
+            for (View view : widgetViews) {
+                if (view != null) {
+                    view.setVisibility(View.GONE);
+                }
+            }
         }
     }
 
@@ -132,6 +163,18 @@ public class Widgets extends RelativeLayout {
             case "weather":
                 setUpWidgetResources(widgetView, R.drawable.ic_weather, R.string.weather);
                 break;
+            case "wifi":
+                setUpWidgetResources(widgetView, R.drawable.ic_wifi, R.string.wifi);
+                break;
+            case "data":
+                setUpWidgetResources(widgetView, R.drawable.ic_data, R.string.data);
+                break;
+            case "ringer":
+                setUpWidgetResources(widgetView, R.drawable.ic_vibrate, R.string.ringer);
+                break;
+            case "bt":
+                setUpWidgetResources(widgetView, R.drawable.ic_bt, R.string.bt);
+                break;
             default:
                 break;
         }
@@ -185,6 +228,7 @@ public class Widgets extends RelativeLayout {
 
         public void observe() {
             ContentResolver cr = mContext.getContentResolver();
+            cr.registerContentObserver(Settings.System.getUriFor("lockscreen_widgets_enabled"), false, this);
             cr.registerContentObserver(Settings.System.getUriFor("lockscreen_widgets"), false, this);
             cr.registerContentObserver(Settings.System.getUriFor("lockscreen_widgets_extras"), false, this);
         }

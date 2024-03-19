@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.settings.preferences.ui.LockscreenPreview
+<org.paranoid.paranoidsettings.preferences.ui.LockscreenPreview
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
@@ -15,7 +15,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.paranoid.settings.utils.WallpaperView
+        <com.android.settings.preferences.ui.WallpaperView
             android:gravity="center"
             android:orientation="vertical"
             android:background="@drawable/preview_bg"
@@ -32,4 +32,4 @@
             android:layout_marginTop="20dp"
             layout="@layout/keyguard_clock_style"/>
     </FrameLayout>
-</com.android.settings.preferences.ui.LockscreenPreview>
+</org.paranoid.paranoidsettings.preferences.ui.LockscreenPreview>

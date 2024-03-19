@@ -12,13 +12,28 @@
             android:key="lockscreen_preview"
             settings:layout="@layout/lockscreen_preview" />
 
-        <co.aospa.framework.preference.SystemSettingListPreference
-            android:entries="@array/clock_style_entries"
-            android:icon="@drawable/ic_clock"
-            android:title="@string/custom_clock_style"
-            android:key="clock_style"
-            android:defaultValue="0"
-            android:entryValues="@array/clock_style_values" />
+            <co.aospa.framework.preference.SystemSettingListPreference
+                android:entries="@array/clock_style_entries"
+                android:icon="@drawable/ic_clock"
+                android:title="@string/custom_clock_style"
+                android:key="clock_style"
+                android:defaultValue="0"
+                android:entryValues="@array/clock_style_values" />
+        </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_widgets"
+        android:title="@string/lockscreen_widgets_title">
+
+        <Preference
+            android:key="lockscreen_widgets_preview"
+            settings:layout="@layout/lockscreen_widgets_preview" />
+
+        <co.aospa.framework.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_widgets_enabled"
+            android:title="@string/lockscreen_widgets_enabled_title"
+            android:summary="@string/lockscreen_widgets_enabled_summary"
+            android:defaultValue="true" />
 
         <co.aospa.framework.preference.SystemSettingListPreference
             android:entries="@array/widget_entries"

@@ -147,9 +147,15 @@
 
     <!-- Custom Clock Style -->
     <string name="lockscreen_clock_category_title">Lockscreen Clock</string>
+    <string name="lockscreen_clock_category_summary">Configure lockscreen clock styles</string>
     <string name="custom_clock_style">Custom Clock Style</string>
+    <string name="lockscreen_title">Lockscreen Customization</string>
+    <string name="lockscreen_summary">Add custom clocks and widgets to lockscreen</string>
 
     <!-- Lockscreen widgets  -->
+    <string name="lockscreen_widgets_title">Lockscreen Widgets</string>
+    <string name="lockscreen_widgets_enabled_title">Enable Lockscreen Widgets</string>
+    <string name="lockscreen_widgets_enabled_summary">Add widgets to lockscreen</string>
     <string name="large_widgets_category_title">Big widgets</string>
     <string name="main_custom_widgets1">Big widget 1</string>
     <string name="main_custom_widgets2">Big widget 2</string>
@@ -166,5 +172,9 @@
     <string name="torch">Torch</string>
     <string name="controls_media_button_play">Play</string>
     <string name="weather">Weather</string>
+    <string name="wifi">Wifi</string>
+    <string name="data">Data</string>
+    <string name="ringer">Ringer</string>
+    <string name="bt">Bluetooth</string>
 
 </resources>
