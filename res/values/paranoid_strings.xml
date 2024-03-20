@@ -92,4 +92,10 @@
     <!-- UI -->
     <string name="something_ui_dashboard_title">Interface</string>
 
+    <!-- System -->
+    <string name="something_system_dashboard_title">System</string>
+    <string name="enable_adblock_title">Block ads</string>
+    <string name="misc_category_title">Miscellaneous</string>
+    <string name="enable_adblock_summary">Block ads in apps and websites, this will override your DNS settings</string>
+
 </resources>

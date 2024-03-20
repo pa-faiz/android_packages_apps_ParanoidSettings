@@ -118,6 +118,12 @@
             android:title="@string/something_ui_dashboard_title"
             android:fragment="org.paranoid.paranoidsettings.fragments.UI"
             android:icon="@drawable/ic_ui" />
+
+        <Preference
+            android:key="system_category"
+            android:title="@string/something_system_dashboard_title"
+            android:fragment="org.paranoid.paranoidsettings.fragments.System"
+            android:icon="@drawable/ic_somesystem" />
         </PreferenceCategory>
 
 </PreferenceScreen>

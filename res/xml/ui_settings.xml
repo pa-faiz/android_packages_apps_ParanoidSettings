@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:title="@string/something_play_integrity_dashboard_title">
+    android:title="@string/something_ui_dashboard_title">
 
     <com.android.settingslib.widget.IllustrationPreference
         android:key="custom_illustration"

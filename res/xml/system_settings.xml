@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/something_system_dashboard_title">
+
+    <PreferenceCategory
+        android:key="misc_category"
+        android:title="@string/misc_category_title">
+
+        <SwitchPreference
+            android:key="enable_adblock"
+            android:title="@string/enable_adblock_title"
+            android:summary="@string/enable_adblock_summary"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -3,6 +3,8 @@ package org.paranoid.paranoidsettings.fragments;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.provider.Settings;
@@ -42,5 +44,37 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
 
         getActivity().setTitle(R.string.something_ui_dashboard_title);
 
+        SwitchPreference enableAdblock = (SwitchPreference) findPreference("enable_adblock");
+        if (enableAdblock != null) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext().getApplicationContext());
+            boolean enableAdblockValue = prefs.getBoolean("enable_adblock", false);
+            enableAdblock.setChecked(enableAdblockValue);
+
+            enableAdblock.setOnPreferenceChangeListener((preference, newValue) -> {
+                boolean isChecked = (Boolean) newValue;
+                prefs.edit().putBoolean("enable_adblock", isChecked).apply();
+
+                if (isChecked) {
+                    Settings.Global.putString(
+                        getContext().getContentResolver(),
+                        Settings.Global.PRIVATE_DNS_MODE,
+                        "hostname"
+                    );
+                    Settings.Global.putString(
+                        getContext().getContentResolver(),
+                        Settings.Global.PRIVATE_DNS_SPECIFIER,
+                        "dns.adguard.com"
+                    );
+                } else {
+                    Settings.Global.putString(
+                        getContext().getContentResolver(),
+                        Settings.Global.PRIVATE_DNS_MODE,
+                        "off"
+                    );
+                }
+
+                return true;
+            });
+        }
     }
 }
