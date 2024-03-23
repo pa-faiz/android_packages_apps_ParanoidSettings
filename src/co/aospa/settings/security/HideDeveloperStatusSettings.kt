@@ -60,7 +60,7 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
     private lateinit var userManager: UserManager
     private lateinit var userInfos: List<UserInfo>
 
-    private var appBarLayout: AppBarLayout? = requireActivity().findViewById(R.id.app_bar)
+    private var appBarLayout: AppBarLayout? = null
     private var searchText = ""
     private var customFilter: ((PackageInfo) -> Boolean)? = null
     private var comparator: ((PackageInfo, PackageInfo) -> Int)? = null
@@ -82,6 +82,7 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
         requireActivity().setTitle(getTitle())
+        appBarLayout = requireActivity().findViewById(R.id.app_bar)
         activityManager = requireContext().getSystemService(ActivityManager::class.java) as ActivityManager
         packageManager = requireContext().packageManager
         packageList = packageManager.getInstalledPackages(PackageManager.MATCH_ANY_USER)
@@ -132,7 +133,7 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
         searchMenuItem.setOnActionExpandListener(object: MenuItem.OnActionExpandListener {
             override fun onMenuItemActionExpand(item: MenuItem): Boolean {
                 // To prevent a large space on tool bar.
-                appBarLayout.setExpanded(false /*expanded*/, false /*animate*/)
+                appBarLayout!!.setExpanded(false /*expanded*/, false /*animate*/)
                 // To prevent user can expand the collapsing tool bar view.
                 ViewCompat.setNestedScrollingEnabled(recyclerView, false)
                 return true
@@ -140,7 +141,7 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
 
             override fun onMenuItemActionCollapse(item: MenuItem): Boolean {
                 // We keep the collapsed status after user cancel the search function.
-                appBarLayout.setExpanded(false /*expanded*/, false /*animate*/)
+                appBarLayout!!.setExpanded(false /*expanded*/, false /*animate*/)
                 ViewCompat.setNestedScrollingEnabled(recyclerView, true)
                 return true
             }
