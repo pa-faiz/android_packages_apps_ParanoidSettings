@@ -22,4 +22,10 @@
         android:summary="@string/spoof_gapps_summary"
         android:defaultValue="true" />
 
+    <com.android.settingslib.widget.FooterPreference
+        android:key="spoofing_footer"
+        android:title="@string/spoofing_footer_summary"
+        android:selectable="false"
+        settings:searchable="false" />
+
 </PreferenceScreen>
