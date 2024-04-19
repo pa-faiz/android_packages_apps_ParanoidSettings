@@ -294,4 +294,8 @@
     <string name="wallpaper_color">Wallpaper color</string>
     <string name="custom_color">Custom color</string>
 
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
+    <string name="lockscreen_battery_info_summary">Display realtime charging current, voltage and battery temperature on lockscreen</string>
+
 </resources>
