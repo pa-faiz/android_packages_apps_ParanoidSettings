@@ -19,5 +19,13 @@
             android:title="@string/status_bar_toggle_brightness"
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
+
+        <Preference
+            android:key="network_traffic_state"
+            android:icon="@drawable/ic_settings_network_traffic"
+            android:title="@string/network_traffic_state_title"
+            android:summary="@string/network_traffic_state_summary"
+            android:fragment="com.android.settings.custom.networktraffic.NetworkTrafficSettings"
+            android:defaultValue="false" />
     </PreferenceCategory>
 </PreferenceScreen>
