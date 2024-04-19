@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/paranoid_dashboard_title">
+
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="something_illustration"
+        settings:lottie_rawRes="@raw/something_illustration"
+        android:order="-1001" />
+
+</PreferenceScreen>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.somethingos.somethingsettings
+package org.paranoid.paranoidsettings
 
 import android.content.Context
 import android.util.Log
@@ -23,7 +23,7 @@ import com.android.settings.core.BasePreferenceController
 import com.android.settings.core.PreferenceControllerMixin
 import com.android.settingslib.search.SearchIndexableRaw
 
-abstract class somethingBasePreferenceController(
+abstract class paranoidBasePreferenceController(
     private val context: Context,
     private val key: String,
 ): BasePreferenceController(context, key),
@@ -65,6 +65,6 @@ abstract class somethingBasePreferenceController(
     override open fun updateDynamicRawDataToIndex(rawData: MutableList<SearchIndexableRaw>) {}
 
     companion object {
-        private const val TAG = "SomethingBasePreferenceController"
+        private const val TAG = "ParanoidBasePreferenceController"
     }
 }

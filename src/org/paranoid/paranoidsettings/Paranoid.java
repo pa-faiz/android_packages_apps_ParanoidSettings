@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.somethingos.somethingsettings;
+package org.paranoid.paranoidsettings;
 
 import android.os.Bundle;
 import com.android.settings.R;
@@ -23,12 +23,12 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class Something extends SettingsPreferenceFragment {
+public class Paranoid extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.something);
+        addPreferencesFromResource(R.xml.paranoid);
     }
 
     @Override
@@ -41,5 +41,5 @@ public class Something extends SettingsPreferenceFragment {
      */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.something);
+            new BaseSearchIndexProvider(R.xml.paranoid);
 }
