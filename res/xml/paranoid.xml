@@ -43,4 +43,17 @@
             android:summary="@string/battery_percent_summary"
             android:fragment="com.android.settings.fuelgauge.StatusBarBatterySettings" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_name_ls"
+        android:title="@string/category_name_ls">
+
+        <Preference
+            android:key="always_on_display_schedule"
+            android:icon="@drawable/ic_aod"
+            android:title="@string/always_on_display_schedule_title"
+            android:summary="@string/aod_schedule_summary"
+            android:fragment="com.android.settings.dashboard.AODSchedule" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
