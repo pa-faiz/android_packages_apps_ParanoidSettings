@@ -5,4 +5,11 @@
     <!-- Paranoid Settings -->
     <string name="paranoid_dashboard_title">#Stay Paranoid</string>
 
+    <!-- Status bar - Brightness -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
+    <!-- Paranoid Categories -->
+    <string name="category_name_sb">Status Bar Control</string>
+
 </resources>
