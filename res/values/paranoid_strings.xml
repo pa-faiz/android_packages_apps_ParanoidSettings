@@ -15,6 +15,7 @@
     <string name="category_name_power">Power Menu</string>
     <string name="category_name_spoof">Google spoofing</string>
     <string name="category_name_qs">QS panel</string>
+    <string name="spoofing_category_title">Google Spoofing</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_state_title">Network traffic indicator</string>
@@ -69,13 +70,18 @@
     <string name="global_actions_advanced_reboot_title">Advanced restart</string>
     <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
 
-    <!-- Play Integrity -->
+    <!-- Play Integrity and Spoofing -->
     <string name="something_play_integrity_dashboard_title">Play Integrity</string>
+    <string name="something_spoofing_dashboard_title">Spoofing</string>
     <string name="play_integrity_summary">Adjust Play Integrity settings</string>
     <string name="play_integrity_update_title">Update Play Integrity Patch</string>
     <string name="play_integrity_update_summary">Download and apply latest fingerprint to spoof</string>
     <string name="play_update_title">Update</string>
     <string name="play_fingerprint">Spoofed values</string>
+    <string name="spoof_gphotos">Google Photos Unlimited</string>
+    <string name="spoof_gphotos_summary">Spoof device as a Pixel XL for unlimited Google Photos backup</string>
+    <string name="spoof_gapps">Spoof Google Apps</string>
+    <string name="spoof_gapps_summary">Spoof Google Apps to have Pixel exclusives features</string>
 
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Show data usage</string>
