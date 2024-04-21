@@ -21,23 +21,32 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.paranoid.paranoidsettings.fragments.EdgeLightSettings;
+import org.paranoid.paranoidsettings.fragments.ScreenOffUdfpsPreferenceController;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class Paranoid extends SettingsPreferenceFragment
+public class Paranoid extends DashboardFragment
                 implements Preference.OnPreferenceChangeListener {
+
+    public static final String TAG = "Paranoid";
 
     private static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
 
@@ -46,7 +55,6 @@ public class Paranoid extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.paranoid);
 
         ContentResolver resolver = getContext().getContentResolver();
 
@@ -81,6 +89,29 @@ public class Paranoid extends SettingsPreferenceFragment
         EdgeLightSettings.reset(mContext);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT);
+    }
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.paranoid;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(
+            Context context, Lifecycle lifecycle, Fragment fragment) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new ScreenOffUdfpsPreferenceController(context,
+                "gesture_screen_off_udfps"));
+        return controllers;
     }
 
     @Override
