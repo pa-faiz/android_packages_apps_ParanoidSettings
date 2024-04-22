@@ -226,6 +226,13 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
+        <co.aospa.framework.preference.SystemSettingSwitchPreference
+            android:key="qs_footer_data_usage"
+            android:icon="@drawable/ic_data_usage"
+            android:title="@string/qs_show_data_usage_title"
+            android:summary="@string/qs_show_data_usage_summary"
+            android:defaultValue="true" />
+
         <co.aospa.framework.preference.SystemSettingSeekBarPreference
             android:key="qs_transparency"
             android:title="@string/qs_transparency_title"
