@@ -22,4 +22,16 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="category_name_power"
+        android:title="@string/category_name_power">
+
+        <co.aospa.framework.preference.SystemSettingSwitchPreference
+            android:key="advanced_reboot"
+            android:icon="@drawable/ic_power"
+            android:title="@string/global_actions_advanced_reboot_title"
+            android:summary="@string/global_actions_advanced_reboot_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
