@@ -10,4 +10,16 @@
         settings:lottie_rawRes="@raw/custom_illustration"
         android:order="-1001" />
 
+    <PreferenceCategory
+        android:key="category_name_qs"
+        android:title="@string/category_name_qs">
+
+        <co.aospa.framework.preference.SystemSettingSwitchPreference
+            android:key="qs_footer_data_usage"
+            android:icon="@drawable/ic_data_usage"
+            android:title="@string/qs_show_data_usage_title"
+            android:summary="@string/qs_show_data_usage_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
