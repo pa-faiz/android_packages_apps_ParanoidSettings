@@ -23,6 +23,23 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="category_name_spoof"
+        android:title="@string/category_name_spoof">
+
+        <Preference
+            android:key="pintegrity_category"
+            android:title="@string/something_play_integrity_dashboard_title"
+            android:icon="@drawable/ic_playintegrity"
+            android:fragment="org.paranoid.paranoidsettings.fragments.PlayIntegrity" />
+
+        <Preference
+            android:key="spoofing_category"
+            android:title="@string/something_spoofing_dashboard_title"
+            android:fragment="org.paranoid.paranoidsettings.fragments.Spoofing"
+            android:icon="@drawable/ic_spoofing" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="misc_category"
         android:title="@string/misc_category_title">
 
