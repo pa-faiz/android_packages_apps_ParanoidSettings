@@ -16,6 +16,7 @@
     <string name="category_name_spoof">Google spoofing</string>
     <string name="category_name_qs">QS panel</string>
     <string name="category_name_ui">UI</string>
+    <string name="category_name_dev">Dev Status</string>
     <string name="spoofing_category_title">Google Spoofing</string>
     <string name="spoofing_footer_summary">Apps may needs to be closed once after enabling spoofing.</string>
 

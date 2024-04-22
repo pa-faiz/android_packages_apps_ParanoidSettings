@@ -11,6 +11,18 @@
         android:order="-1001" />
 
     <PreferenceCategory
+        android:key="category_name_dev"
+        android:title="@string/category_name_dev">
+        <Preference
+            android:key="hide_developer_status_settings"
+            android:title="@string/hide_developer_status_title"
+            android:icon="@drawable/ic_devstatus"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
+            settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="misc_category"
         android:title="@string/misc_category_title">
 
