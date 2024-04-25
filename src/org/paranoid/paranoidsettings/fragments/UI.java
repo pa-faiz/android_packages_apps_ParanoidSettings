@@ -2,14 +2,18 @@ package org.paranoid.paranoidsettings.fragments;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.provider.Settings;
 import android.widget.Toast;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 
 import androidx.annotation.NonNull;
 import androidx.preference.ListPreference;
@@ -18,7 +22,6 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
-
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -31,6 +34,12 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.CUSTOM_VOLUME_STYLES, 2, UserHandle.USER_CURRENT);
     }
 
     @Override
