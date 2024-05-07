@@ -35,6 +35,12 @@
             android:summary="@string/lockscreen_widgets_enabled_summary"
             android:defaultValue="true" />
 
+        <co.aospa.framework.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_display_widgets"
+            android:title="@string/lockscreen_display_widgets_title"
+            android:summary="@string/lockscreen_display_widgets_summary"
+            android:defaultValue="false" />
+
         <co.aospa.framework.preference.SystemSettingListPreference
             android:entries="@array/widget_entries"
             android:icon="@drawable/ic_lock_clock"
