@@ -270,4 +270,12 @@
     <!-- Access QS on lockscreen -->
     <string name="show_qs_on_secure_keyguard_title">Quick settings</string>
     <string name="show_qs_on_secure_keyguard_summary">Allow toggling quick settings on secure lockscreen</string>
+
+    <!-- Button settings - Power menu -->
+    <string name="power_menu_type_title">Power menu style</string>
+    <string name="power_menu_type_lite">Lite (A12)</string>
+    <string name="power_menu_type_full">Full (A11)</string>
+    <string name="power_menu_type_classic">Classic (A8)</string>
+    <string name="power_menu_type_grid">Grid</string>
+    <string name="power_menu_type_legacy">Legacy (A7)</string>
 </resources>
