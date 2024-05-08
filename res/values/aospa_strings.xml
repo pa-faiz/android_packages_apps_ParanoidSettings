@@ -244,4 +244,12 @@
     <!-- Global Actions -->
     <string name="global_actions_advanced_reboot_title">Advanced restart</string>
     <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
+
+    <!-- Button settings - Power menu -->
+    <string name="power_menu_type_title">Power menu style</string>
+    <string name="power_menu_type_lite">Lite (A12)</string>
+    <string name="power_menu_type_full">Full (A11)</string>
+    <string name="power_menu_type_classic">Classic (A8)</string>
+    <string name="power_menu_type_grid">Grid</string>
+    <string name="power_menu_type_legacy">Legacy (A7)</string>
 </resources>
