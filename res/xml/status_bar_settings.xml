@@ -72,4 +72,10 @@
             android:title="@string/network_traffic_settings_title"
             android:summary="@string/network_traffic_settings_summary" />
     </PreferenceCategory>
+
+    <co.aospa.framework.preference.SystemSettingSwitchPreference
+        android:key="ongoing_action_chip"
+        android:title="@string/ongoing_action_chip_title"
+        android:summary="@string/ongoing_action_chip_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
