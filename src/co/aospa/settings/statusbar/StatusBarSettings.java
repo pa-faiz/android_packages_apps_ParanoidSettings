@@ -17,7 +17,6 @@ import android.view.View;
 
 import androidx.preference.Preference;
 
-import com.android.internal.util.aospa.AospaUtils;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
@@ -39,8 +38,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_battery_percent";
 
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 2;
-
-    private static final String NETWORK_TRAFFIC_SETTINGS = "network_traffic_settings";
 
     private SystemSettingListPreference mStatusBarClock;
     private SystemSettingListPreference mStatusBarAmPm;
@@ -77,27 +74,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarAmPm.setEnabled(false);
             mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
         }
-
-        final boolean disallowCenteredClock = AospaUtils.hasCenteredCutout(getActivity())
-                    || getNetworkTrafficStatus() != 0;
-
-        // Adjust status bar preferences for RTL
-        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            if (disallowCenteredClock) {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-            } else {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
-            }
-        } else {
-            if (disallowCenteredClock) {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-            } else {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
-            }        }
     }
 
     @Override
@@ -116,14 +92,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
         mStatusBarBatteryShowPercent.setEnabled(batteryIconStyle != STATUS_BAR_BATTERY_STYLE_TEXT);
-    }
-
-    private int getNetworkTrafficStatus() {
-        int mode = Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.NETWORK_TRAFFIC_MODE, 0);
-        int position = Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.NETWORK_TRAFFIC_POSITION, /* Center */ 1);
-        return mode != 0 && position == 1 ? 1 : 0;
     }
 
     @Override
